@@ -1,7 +1,6 @@
 <script setup>
 import ModalContainer from '../../src/components/ModalContainer.vue'
 import { useModal } from '../../src/composables/useModal'
-import { h } from 'vue'
 
 import MyCoolModal from './components/MyCoolModal.vue'
 
@@ -9,7 +8,7 @@ const { show } = useModal()
 
 function openModal() {
   console.log('open modal')
-  show(h(MyCoolModal, { someProp: 'some_value' }))
+  show(MyCoolModal, { someProp: 'some_value' })
 }
 </script>
 

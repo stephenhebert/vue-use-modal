@@ -25,12 +25,11 @@ import { ModalContainer } from 'vue-use-modal'
 ```
 <script setup>
 import { show } from 'vue-use-modal'
-import { h } from 'vue'
 
 import ModalComponent from '...'
 
 function showMyModal() {
-  show(h(ModalComponent, { prop1, prop2, ...}))
+  show(ModalComponent, { prop1, prop2, ...})
 }
 </script>
 ```

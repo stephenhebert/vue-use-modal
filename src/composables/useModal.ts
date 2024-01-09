@@ -1,4 +1,4 @@
-import { readonly, ref } from 'vue'
+import { readonly, ref, h } from 'vue'
 import { createGlobalState } from '@vueuse/core'
 
 function getInstance() {
@@ -7,9 +7,9 @@ function getInstance() {
   const hide = () => {
     modal.value = null
   }
-  const show = (m: any) => {
+  const show = (m: any, modalProps: any) => {
     hide()
-    modal.value = m
+    modal.value = h(m,modalProps)
   }
 
   return {
