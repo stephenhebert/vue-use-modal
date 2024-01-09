@@ -29,7 +29,7 @@ jobs:
 
       - run: git config --global user.name 'GitHub Actions'
       - run: git config --global user.email 'github-actions@users.noreply.github.com'
-      - run: npm version patch -m "[RELEASE]" -m "Release %s"
+      - run: npm version patch -m "[RELEASE]"
 
       # Push back to the repo
       - run: git pull
