@@ -3,7 +3,7 @@
 ## Installation
 
 ```
-> pnpm add vue-use-modal
+> pnpm add @stephenhebert/vue-use-modal
 ```
 
 ## Usage
@@ -11,7 +11,7 @@
 ### App.vue
 ```
 <script setup>
-import { ModalContainer } from 'vue-use-modal'
+import { ModalContainer } from '@stephenhebert/vue-use-modal'
 ...
 </script>
 
@@ -24,7 +24,7 @@ import { ModalContainer } from 'vue-use-modal'
 ### Component.vue
 ```
 <script setup>
-import { show } from 'vue-use-modal'
+import { show } from '@stephenhebert/vue-use-modal'
 
 import ModalComponent from '...'
 

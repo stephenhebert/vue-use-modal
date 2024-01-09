@@ -1,28 +1,45 @@
 {
-	"name": "stephenhebert/vue-use-modal",
-	"type": "module",
-	"version": "1.0.0",
-	"description": "Modal pattern for Vue 3",
-	"repository": "https://github.com/stephenhebert/vue-use-modal",
-	"exports": {
-		".": {
-			"import": "./dist/index.js"
-		}
-	},
-	"main": "dist/index.js",
-	"types": "./dist/types/index.d.ts",
-	"scripts": {
-		"build": "vite build"
-	},
-	"peerDependencies": {
-		"vue": "^3.4.6"
-	},
-	"dependencies": {
-		"@pdanpdan/vue-keyboard-trap": "^1.0.19",
-		"@vueuse/core": "^10.7.1"
-	},
-	"devDependencies": {
-		"@vitejs/plugin-vue": "^5.0.2",
-		"vite": "^5.0.11"
-	}
+  "name": "@stephenhebert/vue-use-modal",
+  "type": "module",
+  "version": "1.0.0",
+  "author": "Stephen Hebert",
+  "license": "MIT",
+  "description": "Modal pattern for Vue 3",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephenhebert/vue-use-modal.git"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "dist/index.js",
+  "types": "./dist/types/index.d.ts",
+  "scripts": {
+    "build": "vite build"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.6"
+  },
+  "dependencies": {
+    "@pdanpdan/vue-keyboard-trap": "^1.0.19",
+    "@vueuse/core": "^10.7.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.2",
+    "vite": "^5.0.11"
+  },
+  "bugs": {
+    "url": "https://github.com/stephenhebert/vue-use-modal/issues"
+  },
+  "homepage": "https://github.com/stephenhebert/vue-use-modal#readme",
+  "directories": {
+    "example": "example"
+  },
+  "keywords": [
+    "vue",
+    "modal",
+    "composable"
+  ]
 }
