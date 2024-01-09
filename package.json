@@ -1,0 +1,28 @@
+{
+	"name": "stephenhebert/vue-use-modal",
+	"type": "module",
+	"version": "1.0.0",
+	"description": "Modal pattern for Vue 3",
+	"repository": "https://github.com/stephenhebert/vue-use-modal",
+	"exports": {
+		".": {
+			"import": "./dist/index.js"
+		}
+	},
+	"main": "dist/index.js",
+	"types": "./dist/types/index.d.ts",
+	"scripts": {
+		"build": "vite build"
+	},
+	"peerDependencies": {
+		"vue": "^3.4.6"
+	},
+	"dependencies": {
+		"@pdanpdan/vue-keyboard-trap": "^1.0.19",
+		"@vueuse/core": "^10.7.1"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-vue": "^5.0.2",
+		"vite": "^5.0.11"
+	}
+}

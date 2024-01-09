@@ -1,0 +1,58 @@
+name: Version, Release
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches:
+      - main
+
+jobs:
+  version-changelog:
+    runs-on: ubuntu-latest
+    if: ${{ !startsWith(github.event.head_commit.message, '[RELEASE]') }}
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # ci
+      - run: npm ci
+      - run: npm run build
+
+      - run: git config --global user.name 'GitHub Actions'
+      - run: git config --global user.email 'github-actions@users.noreply.github.com'
+      - run: npm version patch -m "[RELEASE]" -m "Release %s"
+
+      # Push back to the repo
+      - run: git pull
+      - run: git push
+
+      # # Add Changelog
+      # - run: npx changelogithub
+      #   env:
+      #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Get package version
+        id: get-version
+        uses: beaconbrigade/package-json-version@v0.3
+      - name: Print the version
+        run: echo "The version was ${{ steps.get-version.outputs.version }}"
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: ${{ steps.get-version.outputs.version }}
+          release_name: Release ${{ steps.get-version.outputs.version }}
+
+      # Commit all changed files back to the repository
+      # - uses: stefanzweifel/git-auto-commit-action@v4
