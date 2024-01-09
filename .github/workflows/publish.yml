@@ -1,4 +1,4 @@
-name: Publish Github Package
+name: Publish NPM Package
 
 on:
   push:
@@ -11,7 +11,6 @@ jobs:
     if: ${{ startsWith(github.event.head_commit.message, '[RELEASE]') }}
     permissions:
       contents: read
-      packages: write
     steps:
       - uses: actions/checkout@v3
         with:
