@@ -27,8 +27,9 @@ jobs:
       - name: Print the version
         run: echo "The version was ${{ steps.get-version.outputs.version }}"
 
-      - run: npm ci
-      - run: npm run build
+      - run: npm i -g pnpm
+      - run: pnpm i
+      - run: pnpm build
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
